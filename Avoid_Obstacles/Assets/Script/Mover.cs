@@ -1,20 +1,17 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    [SerializeField] float xValue = 0.00f;
-    [SerializeField] float yValue = 0.01f;
-    [SerializeField]float zValue = 0.00f;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
-
-    // Update is called once per frame
+    
+    [SerializeField] float MoveSpeed = 10f;
     void Update()
     {
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * MoveSpeed;
+        float yValue = 0.0f;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * MoveSpeed;
         transform.Translate(xValue, yValue, zValue);
     }
 }
