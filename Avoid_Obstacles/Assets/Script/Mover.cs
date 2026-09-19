@@ -6,12 +6,12 @@ public class Mover : MonoBehaviour
     {
     }
     
-    [SerializeField] float MoveSpeed = 10f;
+    [SerializeField] float moveSpeed = 10f;
     void Update()
     {
-        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * MoveSpeed;
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float yValue = 0.0f;
-        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * MoveSpeed;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Translate(xValue, yValue, zValue);
     }
 }
